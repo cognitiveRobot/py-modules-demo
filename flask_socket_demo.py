@@ -15,6 +15,10 @@ thread = Thread()
 def index():
     return render_template('index.html')
 
+@app.route('/sidebar_example')
+def sidebar_example():
+    return render_template('sidebar_example.html')
+
 test_message_run = 0
 
 # class ReadSensor(Thread):

@@ -1,0 +1,73 @@
+body,html {
+height: 100%;
+}
+
+/* must be relative for scrollspy to work */
+body {
+position: relative;
+}
+
+.min-100 {
+min-height: 100vh;
+}
+
+/* .navbar.affix-top,
+.navbar.affix-bottom {
+position: static;
+}
+
+.navbar.affix{
+position: fixed;
+width: 100%;
+top: 0;
+z-index: 1;
+background: #fff;
+transition: all .35s ease;
+}*/
+.navbar {
+  position: sticky;
+    width: 100%;
+    top: 0;
+}
+
+#sidemenu.affix-top, #sidemenu.affix {
+position: static;
+}
+
+#sidemenu.affix-bottom {
+position: relative;
+}
+
+@media (min-width: 768px) {
+#sidemenu.affix {
+position: fixed;
+top: 40px;
+}
+}
+
+#sidemenu .nav-link.active,
+#sidemenu .nav-link:hover,
+#sidemenu .nav-link:focus{
+color: #111;
+border-bottom: 1px #000 dashed;
+}
+
+.anchor{
+display: block;
+height: 70px;
+margin-top: -70px;
+visibility: hidden;
+}
+
+#content .nav-link {
+color: #555;
+transition: all 0.2 ease;
+}
+
+footer a {
+color: #ccc;
+}
+footer a:hover,
+footer a:focus{
+color: #eee;
+}
