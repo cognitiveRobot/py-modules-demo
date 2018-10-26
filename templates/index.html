@@ -22,7 +22,6 @@
     <div class="container" id="content">
         <div class="row">
             <h3>Number list:</h3>
-            <div id="messageDiv"></div>
             <div id="log">
             </div>
         </div>
@@ -51,19 +50,5 @@
     //       $('#log').html(numbers_string);
     //   });
     // });
-
-    // for SSE
-    $(document).ready(function(){
-      function listen() {
-          var source = new EventSource("/stream/");
-          var target = document.getElementById("messageDiv");
-          source.onmessage = function(msg) {
-            console.log(msg.data);
-      	     target.innerHTML = msg.data + '<br>';
-          }
-      }
-      listen();
-    });
-
   </script>
 </html>
