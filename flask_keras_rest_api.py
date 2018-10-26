@@ -16,10 +16,11 @@ model = None
 def load_model():
     # load the pre-trained Keras model (here we are using a model
 	# pre-trained on ImageNet and provided by Keras, but you can
-	# substitute in your own networks just as easily)
+	# substitute in your own networks just as easily)\
 	global model, graph
 	model = ResNet50(weights="imagenet")
 	graph = tf.get_default_graph()
+
 
 def prepare_image(image, target):
 	# if the image mode is not RGB, convert it

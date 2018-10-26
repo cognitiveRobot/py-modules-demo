@@ -26,8 +26,8 @@ packages
   numpy-1.15.3
   Keras
   tensorflow1.5
-maybe
   pillow
+maybe
   request
   gevent
 ```
