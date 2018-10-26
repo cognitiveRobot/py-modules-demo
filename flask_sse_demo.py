@@ -57,7 +57,7 @@ def stream_data():
 @app.route('/')
 def index():
     print("Index requested")
-    return render_template('index.html')
+    return render_template('sse.html')
 
 @app.route('/stream/', methods=['GET', 'POST'])
 def stream():
