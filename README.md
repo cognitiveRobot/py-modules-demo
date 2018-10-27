@@ -17,7 +17,15 @@
    templates/layout.html
    templates/materialize.html
    ```
-## 3. Flask Keras REST API
+## 3. Server Sent Event
+
+#### Main Components
+* Server side - Flask, Queue, Thread, Gevent
+* Client side - JQuery and Materialize
+
+[commit](https://github.com/cognitiveRobot/py-modules-demo/commit/4e57e453756c84ab14ade07869216af6a196e858)
+
+## 4. Flask Keras REST API
 Thanks to [Adrian Rosebrock](https://github.com/jrosebr1/simple-keras-rest-api)
 
 #### Dependencies
