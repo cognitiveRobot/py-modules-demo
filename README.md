@@ -23,7 +23,9 @@
 * Server side - Flask, Queue, Thread, Gevent
 * Client side - JQuery and Materialize
 
-[commit](https://github.com/cognitiveRobot/py-modules-demo/commit/4e57e453756c84ab14ade07869216af6a196e858)
+#### Files Used
+* [python](https://github.com/cognitiveRobot/py-modules-demo/blob/master/flask_sse_demo.py)
+* [html](https://github.com/cognitiveRobot/py-modules-demo/blob/master/templates/sse.html)
 
 ## 4. Flask Keras REST API
 Thanks to [Adrian Rosebrock](https://github.com/jrosebr1/simple-keras-rest-api)
