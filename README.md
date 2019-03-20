@@ -3,12 +3,37 @@
 ## 1. Flask pytorch API
 Thanks to [cwerner](https://github.com/cwerner/guitars-app/blob/master/guitar-classifier.py)
 
+#### Technologies
+```
+  CNN
+  flask
+  ajax
+  jquery
+```
+
 #### Dependencies
 ```
   pytorch
   fastai
   tensorflow1.5
   pillow
+```
+#### Running
+
+```
+    $python flask_fastai_api.py
+
+    then provide a url for an image
+
+    click on the Predict button.
+
+    Working on to predict...
+    [2019-03-20 19:39:30,574] INFO in flask_fastai_api: Classifying image https://cf4.s3.souqcdn.com/item/2017/06/12/23/05/57/25/item_L_23055725_32443293.jpg
+    [2019-03-20 19:39:31,106] INFO in flask_fastai_api: Execution time: 0.09 seconds
+    [2019-03-20 19:39:31,107] INFO in flask_fastai_api: Image https://cf4.s3.souqcdn.com/item/2017/06/12/23/05/57/25/item_L_23055725_32443293.jpg classified as teddys
+    127.0.0.1 - - [20/Mar/2019 19:39:31] "GET /predict?a=https%3A%2F%2Fcf4.s3.souqcdn.com%2Fitem%2F2017%2F06%2F12%2F23%2F05%2F57%2F25%2Fitem_L_23055725_32443293.jpg HTTP/1.1" 200 -
+
+
 ```
 ## 2. Flask Keras REST API
 Thanks to [Adrian Rosebrock](https://github.com/jrosebr1/simple-keras-rest-api)
