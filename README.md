@@ -1,35 +1,16 @@
 # The House of Demos
 
-## 1. Thread and Queue
+## 1. Flask pytorch API
+Thanks to [cwerner](https://github.com/cwerner/guitars-app/blob/master/guitar-classifier.py)
 
-####  Dependencies:
-  ```
-  gevent==1.3.7
-  greenlet==0.4.15
-  pkg-resources==0.0.0
-  ```
-## 2. Materialize
-
-####   Files used:
-   ```
-   flask_materialize_demo.py
-   templates/includes/_navbar.html
-   templates/layout.html
-   templates/materialize.html
-   ```
-## 3. Server Sent Event
-
-A technology to send data from the server to the clients. Read [this](https://www.smashingmagazine.com/2018/02/sse-websockets-data-flow-http2/) to learn more about SSE and Websockets.  
-
-#### Main Components
-* Server side - Flask, Queue, Thread, Gevent
-* Client side - JQuery and Materialize
-
-#### Files Used
-* [python](https://github.com/cognitiveRobot/py-modules-demo/blob/master/flask_sse_demo.py)
-* [html](https://github.com/cognitiveRobot/py-modules-demo/blob/master/templates/sse.html)
-
-## 4. Flask Keras REST API
+#### Dependencies
+```
+  pytorch
+  fastai
+  tensorflow1.5
+  pillow
+```
+## 2. Flask Keras REST API
 Thanks to [Adrian Rosebrock](https://github.com/jrosebr1/simple-keras-rest-api)
 
 #### Dependencies
@@ -39,7 +20,6 @@ packages
   Keras
   tensorflow1.5
   pillow
-maybe
   request
   gevent
 ```
@@ -110,3 +90,33 @@ with graph.as_default():
         preds = model.predict(image)
   ```
   or check my [commit](https://github.com/cognitiveRobot/simple-keras-rest-api/commit/725909d262f31ad775723dd12ba55c4ffe257e8a)
+
+
+## 3. Thread and Queue
+
+####  Dependencies:
+  ```
+  gevent==1.3.7
+  greenlet==0.4.15
+  pkg-resources==0.0.0
+  ```
+## 4. Materialize
+
+####   Files used:
+   ```
+   flask_materialize_demo.py
+   templates/includes/_navbar.html
+   templates/layout.html
+   templates/materialize.html
+   ```
+## 5. Server Sent Event
+
+A technology to send data from the server to the clients. Read [this](https://www.smashingmagazine.com/2018/02/sse-websockets-data-flow-http2/) to learn more about SSE and Websockets.  
+
+#### Main Components
+* Server side - Flask, Queue, Thread, Gevent
+* Client side - JQuery and Materialize
+
+#### Files Used
+* [python](https://github.com/cognitiveRobot/py-modules-demo/blob/master/flask_sse_demo.py)
+* [html](https://github.com/cognitiveRobot/py-modules-demo/blob/master/templates/sse.html)
