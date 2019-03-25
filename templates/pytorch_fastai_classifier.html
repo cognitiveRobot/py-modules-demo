@@ -1,0 +1,107 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <!-- <div class="container"> -->
+        <h3>Welcome to ImageClassifier-v2 Demo</h3>
+
+
+        <div class="row">
+            <div class="col s12 m6 l6 xl6">
+                <form method=post action="/upload_image" enctype=multipart/form-data>
+                  <p><input type=url name=url placeholder="Paste an image link">
+                     <input type=submit value=Analyse class="btn grey darken-2 waves-effect waves-light">
+                </form>
+            </div>
+            <div class="col s12 m6 l6 xl6">
+                <form method=post action="/upload_image" enctype=multipart/form-data>
+                    <div class="row">
+                        <div class="file-field input-field">
+                            <div class="btn grey">
+                                <span >File</span>
+                                <input type="file" name="file" >
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input type="text" class="file-path" placeholder="Choose an image">
+                            </div>
+
+                        </div>
+                        <div class="control">
+                            <button class="btn grey darken-2 waves-effect waves-light">
+                                Analyse
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="row">
+            <!-- <div class="grid-example col l6 m12 s12">
+                <div class="card-panel hoverable">
+                    {% if img_file %}
+                    <img src="{{img_file}}" >
+                    {% endif %}
+                </div>
+            </div> -->
+            <div class="col s12 m6">
+              <div class="card-panel" >
+                    <div class="card-image hoverable">
+                      <img class="responsive-img" src="{{img_file}}">
+                    </div>
+              </div>
+            </div>
+
+            <div class="col s12 m6">
+              <div class="card-panel z-depth-1">
+                  <h5 class="title">Prediction: {{ predicted_item }}</h5>
+                  <div class="row">
+                      <div class="col s3">
+                          {% for class in classes %}
+                              <div>{{class}}</div><br>
+                          {% endfor %}
+                      </div>
+                      <div class="col s9">
+                          {% for prob in probs_in_percentage %}
+                              <!-- <div>
+                                  <meter value="{{prob}}" min="0" max="100"></meter><br>
+                              </div><br> -->
+                              <div class="row">
+                                  <div class="col s6 progress grey">
+                                      <div class="determinate grey darken-4" style="width: {{prob}}%"></div>
+                                  </div>
+                                  <div class="col s3">
+                                      <label>{{"%.3f"|format(prob)}}%</label>
+                                  </div>
+                              </div>
+
+                              <!-- <div class="skills">{{prob}}</div> -->
+
+                          {% endfor %}
+                      </div>
+                  </div>
+
+              </div>
+            </div>
+
+        </div>
+
+
+
+
+    <!-- </div> -->
+<!--
+    <div class="results">
+        {% for class in final_result %}
+            <h5>
+            {% for  value in class %}
+                {{ value }}
+            {% endfor %}
+            </h5>
+        {% endfor %}
+    </div> -->
+
+{% endblock %}
