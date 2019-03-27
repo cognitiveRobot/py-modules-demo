@@ -1,0 +1,96 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container-fluid">
+            <br/>
+            <h4>Live data plotting using Flask and Highcharts.</h4>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <!-- Example row of columns -->
+        <div class="row">
+
+            <div class="container-fluid" id="data-container"></div>
+
+        </div>
+    </div>
+    <hr>
+{% endblock %}
+
+{% block sourceScript %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/highcharts-more.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+{% endblock %}
+
+{% block script %}   
+
+    <script type="text/javascript">
+
+        var chart;
+
+        /**
+        * Request data from the server, add it to the graph and set a timeout
+        * to request again
+        */
+        function requestData() {
+            $.ajax({
+                url: '/live-data',
+                success: function(point) {
+                    var series = chart.series[0],
+                        shift = series.data.length > 20; // shift if the series is
+                                                        // longer than 20
+
+                    // add the point
+                    chart.series[0].addPoint(point, true, shift);
+
+                    // call it again after one second
+                    setTimeout(requestData, 1000);
+                },
+                cache: false
+            });
+        }
+
+        $(document).ready(function() {
+            chart = new Highcharts.Chart({
+                chart: {
+                    renderTo: 'data-container',
+                    defaultSeriesType: 'spline',
+                    events: {
+                        load: requestData
+                    }
+                },
+                title: {
+                    text: 'Live random data'
+                },
+                xAxis: {
+                    type: 'datetime',
+                    tickPixelInterval: 150,
+                    maxZoom: 20 * 1000
+                },
+                yAxis: {
+                    minPadding: 0.2,
+                    maxPadding: 0.2,
+                    title: {
+                        text: 'Value',
+                        margin: 80
+                    }
+                },
+                series: [{
+                    name: 'Random data',
+                    data: []
+                }]
+            });
+        });
+    </script>
+{% endblock %}
+
+
