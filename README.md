@@ -116,7 +116,32 @@ with graph.as_default():
   ```
   or check my [commit](https://github.com/cognitiveRobot/simple-keras-rest-api/commit/725909d262f31ad775723dd12ba55c4ffe257e8a)
 
+## 3. Live Data Plotting
+Thanks to [Tom Diethe](https://github.com/tdiethe/flask-live-charts)
 
+![](static/live-random-data.png?raw=true)
+
+#### Technologies
+```
+  flask
+  hightchart.js
+  ajax
+  jquery
+```
+
+#### Dependencies
+```
+  json
+  flask
+```
+#### Running
+
+```
+    $python flask_live_graph.py
+
+    then go to http://127.0.0.1:5000/ 
+
+```
 ## 3. Thread and Queue
 
 ####  Dependencies:
